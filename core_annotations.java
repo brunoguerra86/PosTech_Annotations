@@ -41,3 +41,30 @@ public class DatabaseConfiguration {
     // implementação   
 }
 
+@Configuration
+@ComponentScan(basePackages = {"com.fiap.repository", "", ""})
+public class DatabaseConfiguration {
+    
+}
+
+@Configuration
+public class AppConfig {
+
+    @Bean
+    public Pessoa pessoa(){
+        return new Pessoa();
+    }    
+}
+
+@Service
+@Lazy
+public class MyLazyService {
+
+}
+
+@Service
+public class DatabaseConfiguration{
+    
+    @Value("${myuri.database.uri}")
+    private String uriBase;
+}
